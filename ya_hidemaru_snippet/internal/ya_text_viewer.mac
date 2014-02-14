@@ -42,6 +42,8 @@ $g_text_ctrl_name 		= "mledt1";
 #g_temp_hiudemaru		= 0;
 #g_open_temp_hiudemaru	= false;
 
+//ƒŠƒXƒg‚Ì‚‚³
+#g_list_high = 80;
 
 call Main;
 endmacro $$return;
@@ -314,7 +316,7 @@ Finalize:
 
 
 CalcListHeight:
-	call Min #g_abs_snippets_dir_len, 80;
+	call Min #g_abs_snippets_dir_len, #g_list_high;
 	return ##return;
 
 

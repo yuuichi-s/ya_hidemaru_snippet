@@ -18,7 +18,6 @@ $g_dll_dengaku_abs_path = hidemarudir + "\\" + "DengakuDLL.dll";
 $g_ya_hidemaru_snippet_dir	= "ya_hidemaru_snippet";
 $g_snippets_dir_name 		= $g_ya_hidemaru_snippet_dir+"\\snippets";
 $g_internal_module_dir		= $g_ya_hidemaru_snippet_dir+"\\internal";
-$g_run_snippet_mac			= $g_internal_module_dir + "\\ya_run_snippet_file.mac";
 
 
 //long-file-nameのままだと、dengakuのENUMFILE関数で失敗するようなのでshort-path-nameで回避している。
@@ -26,11 +25,14 @@ call GetShortPath currentmacrodirectory + "\\" + $g_snippets_dir_name + "\\";
 $g_snippets_abs_dir		= $$return + "\\";
 
 call GetShortPath currentmacrodirectory + "\\" + $g_internal_module_dir + "\\";
-$g_ini_abs_filename 	= $$return + "\\config.ini";
+$short_module_dir = $$return;
+$g_ini_abs_filename 	= $short_module_dir + "\\config.ini";
 $g_ini_section_name		= "config";
 
 $g_ini_section_new_file	= "new_file";
 $g_ini_key_ext			= "ext";
+
+$g_run_snippet_mac			= $short_module_dir + "\\ya_run_snippet_file.mac";
 
 //静的変数の名前
 $g_static_variable_name	= "ya_hidemaru_snippet_path";

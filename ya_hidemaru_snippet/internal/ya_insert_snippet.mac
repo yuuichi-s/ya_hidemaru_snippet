@@ -11,6 +11,8 @@ endmacro;
 Main:
 	execmacro $g_macro_abs_filename,$g_snippets_abs_dir_name,"*.txt;*.mac;*.bat;*.vbs;*.js;*.py";
 	$$snippet_filename = getresultex(-1);
-	message($$snippet_filename);
+	if ($$snippet_filename != "") {
+		message($$snippet_filename);
+	}
 	return ;
 	
